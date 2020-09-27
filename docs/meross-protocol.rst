@@ -100,12 +100,13 @@ to the MQTT broker (the one that has been configured in the first POST message),
 
     username: <mac-address>
 
-    password: md5(<mac-address><key>)
+    password: <userId>_md5(<mac-address><key>)
 
 .. note::
    The mac address should be in lower case, following the form XX:XX:XX:XX:XX:XX. The password is calculated as the
-   md5 hex digest (in lower case) of the concatenated string <mac-address> + <key>, where the key is the one that has
-   been retrieved by the APP at login time via HTTP API.
+   numerical userId, followed by the underscore digit, followed by the md5 hex digest (in lower case) of the
+   concatenated string <mac-address> + <key>, where the key and the userId have been retrieved by the APP at login
+   time via HTTP API.
 
 The plug assumes that the broker uses TLS secured connection, so it expects the broker to use SSL. However it seems
 that the plug does not perform any kind of validation of the server certificate. The author was able to make a MSS210
