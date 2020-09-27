@@ -38,6 +38,8 @@ Table Of Contents
    meross-arch
    advanced-topics
    api-reference/index
+   meross-protocol
+
 
 Indices and tables
 ==================
